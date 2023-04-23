@@ -9,6 +9,8 @@ import logging
 import numpy as np
 import tensorflow.compat.v1 as tf 
 
+tf.compat.v1.disable_eager_execution()
+
 class Trainer(object):
 
     def __init__(self, config, mode, net, clip_op_lambda):
