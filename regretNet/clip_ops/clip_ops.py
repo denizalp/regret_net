@@ -3,8 +3,7 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf 
 
 def clip_op_01(x):
     # clip_op = tf.assign(x, tf.clip_by_value(x, 0.0, 1.0))

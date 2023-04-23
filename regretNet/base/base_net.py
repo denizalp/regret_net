@@ -6,8 +6,7 @@ import os
 import sys
 import logging
 import numpy as np
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf 
 def create_var(name, shape, dtype = tf.float32, initializer = None, wd = None, summaries = False, trainable = True):
     """ 
     Helper to create a Variable and summary if required

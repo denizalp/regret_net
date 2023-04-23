@@ -4,8 +4,7 @@ from __future__ import print_function
 
 import sys
 import numpy as np
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf 
 
 from nets import *
 from cfgs import *
@@ -14,7 +13,6 @@ from clip_ops.clip_ops import *
 from trainer import *
 from baseline.baseline import *
 
-tf.compat.v1.variable_scope()
 
 print("Setting: %s"%(sys.argv[1]))
 setting = sys.argv[1]
