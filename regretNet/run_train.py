@@ -13,6 +13,8 @@ from data import *
 from clip_ops.clip_ops import *
 from trainer import *
 
+tf.compat.v1.variable_scope()
+
 print("Setting: %s"%(sys.argv[1]))
 setting = sys.argv[1]
 
