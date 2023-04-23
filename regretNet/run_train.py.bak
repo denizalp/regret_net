@@ -1,6 +1,6 @@
-
-
-
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 
 import sys
 import numpy as np
@@ -12,9 +12,11 @@ from data import *
 from clip_ops.clip_ops import *
 from trainer import *
 
+tf.compat.v1.variable_scope()
+
 print("Setting: %s"%(sys.argv[1]))
 setting = sys.argv[1]
-tf.compat.v1.variable_scope()
+
 if setting == "additive_1x2_uniform":
     cfg = additive_1x2_uniform_config.cfg
     Net = additive_net.Net
@@ -77,7 +79,7 @@ elif setting == "additive_1x2_uniform_416_47":
     Generator = uniform_416_47_generator.Generator
     clip_op_lambda = (lambda x: clip_op_416_47(x))
     Trainer = trainer.Trainer
-
+    
 elif setting == "additive_1x2_uniform_triangle":
     cfg = additive_1x2_uniform_triangle_config.cfg
     Net = additive_net.Net
@@ -112,12 +114,13 @@ elif setting == "unit_2x2_uniform":
     Generator = uniform_01_generator.Generator
     clip_op_lambda = (lambda x: clip_op_01(x))
     Trainer = trainer.Trainer
-
+    
 else:
     print("None selected")
     sys.exit(0)
     
+
 net = Net(cfg)
-generator = Generator(cfg, 'test')
-m = Trainer(cfg, "test", net, clip_op_lambda)
-m.test(generator)
+generator = [Generator(cfg, 'train'), Generator(cfg, 'val')]
+m = Trainer(cfg, "train", net, clip_op_lambda)
+m.train(generator)
