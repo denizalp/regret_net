@@ -15,6 +15,8 @@ from trainer import *
 print("Setting: %s"%(sys.argv[1]))
 setting = sys.argv[1]
 # tf.compat.v1.variable_scope()
+tf.compat.v1.disable_eager_execution()
+
 if setting == "additive_1x2_uniform":
     cfg = additive_1x2_uniform_config.cfg
     Net = additive_net.Net
