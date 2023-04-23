@@ -45,7 +45,8 @@ __C.train.seed = 42
 # training form restore_iter [needs saved model]
 __C.train.restore_iter = 0
 # max iters to train 
-__C.train.max_iter = 400000
+# __C.train.max_iter = 400000
+__C.train.max_iter = 80
 # Learning rate of network param updates
 __C.train.learning_rate = 1e-3
 # Regularization
@@ -89,8 +90,8 @@ __C.train.max_to_keep = 10
 # Frequency at which models are saved
 __C.train.save_iter = 50000 
 # Train stats print frequency
-__C.train.print_iter = 1000
-   
+# __C.train.print_iter = 1000
+__C.train.print_iter = 1
 
 """ Validation params """
 __C.val = edict()
