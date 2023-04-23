@@ -6,18 +6,18 @@ import numpy as np
 import tensorflow.compat.v1 as tf 
 
 def clip_op_01(x):
-    # clip_op = tf.assign(x, tf.clip_by_value(x, 0.0, 1.0))
-    clip_op = tf.assign(x, tf.clip_by_value(x, 0.0, 10.0))
+    clip_op = tf.assign(x, tf.clip_by_value(x, 0.0, 1.0))
+    # clip_op = tf.assign(x, tf.clip_by_value(x, 0.0, 10.0))
     return clip_op
     
 def clip_op_12(x):
-    # clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 2.0))
-    clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 10.0))
+    clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 2.0))
+    # clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 10.0))
     return clip_op
     
 def clip_op_23(x):
-    # clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 3.0))
-    clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 10.0))
+    clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 3.0))
+    # clip_op = tf.assign(x, tf.clip_by_value(x, 1.0, 10.0))
     return clip_op
 
 def clip_op_12_15(x):
